@@ -20,10 +20,11 @@ object NetworkModule {
     @Provides
     fun provideRetrofit():Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://drawsomething-59328-default-rtdb.europe-west1.firebasedatabase.app/")
+            .baseUrl("https://gateway.marvel.com/v1/public/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+//    "https://drawsomething-59328-default-rtdb.europe-west1.firebasedatabase.app/
 
     // proveo ApiClient
     @Singleton

@@ -23,16 +23,19 @@ class MainActivity : AppCompatActivity() {
 
         quoteViewModel.onCreate()
 
-        quoteViewModel.quoteModel.observe(this, Observer {
+        quoteViewModel.dataModel.observe(this, Observer {
             // TODO LO QUE ESTA ACA DENTRO ESTA ENGANCHADO AL LIVE DATA
-            binding.tvQuote.text = it.quote
-            binding.tvAuthor.text = it.author
+
+            binding.tvQuote.text = it.attributionText
+            binding.tvAuthor.text = it.status
+//            binding.tvQuote.text = it.quote
+//            binding.tvAuthor.text = it.author
         })
 
         quoteViewModel.isLoading.observe(this, Observer {
             binding.progress.isVisible = it
         })
 
-        binding.viewContainer.setOnClickListener { quoteViewModel.randomQuote() }
+//        binding.viewContainer.setOnClickListener { quoteViewModel.randomQuote() }
     }
 }
